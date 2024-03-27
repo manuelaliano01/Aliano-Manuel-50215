@@ -29,10 +29,9 @@ Modelos usuados:
 
 - Frutas: En este modelo contamos con un campo de texto (CharField) que registra el nombre del producto. Un campo decimal (DecimalField) que registra el precio del producto. Un campo entero (DecimalField) que registra la cantidad disponible del producto en el inventario.
 
-NOTA |  En los primeros dos casos al tratarse de productos que se venden por unidad, registré su cantidad a partir de enteros. En los casos de la fruta y la verdura, me resultó más atinado contabilizar su cantidad con valores numéricos decimales ya que puede venderse, en algunos casos, menos de un kilo.
+NOTA N°1 |  En los primeros dos casos al tratarse de productos que se venden por unidad, registré su cantidad a partir de enteros. En los casos de la fruta y la verdura, me resultó más atinado contabilizar su cantidad con valores numéricos decimales ya que puede venderse, en algunos casos, menos de un kilo.
 
 - Avatar: En este modelo la clase Avatar representa un avatar asociado a un usuario. Contiene un campo de imagen para la imagen del avatar y una clave externa que se relaciona con el modelo de usuario de Django.
 
-
-
+NOTA N°2 | No estaba seguro si al ser un repositorio público por una cuestión de seguridad el usuario y contraseña podia dejarlo en el README. Agrego los datos en los comentarios de la entrega dentro de la plataforma.  
 
