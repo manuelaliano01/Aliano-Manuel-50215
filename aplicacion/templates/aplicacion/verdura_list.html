@@ -1,0 +1,69 @@
+{% extends 'aplicacion/index.html' %}
+
+{% block Titulo %}
+<h1 class="display-4 fw-bolder">VERDURAS</h1>
+<p class="lead fw-normal text-white-50 mb-0">INVENTARIO TOTAL DE VERDURAS</p>
+</header>
+{% endblock Titulo %}
+
+{% block Contenido %}
+<div style="display: inline-block;">
+    <table>
+        <tr>
+            <td width="150"><h2>AGREGAR</h2></td>
+            <td>
+                <a href="{% url 'verduras_create' %}" class="btn btn-primary btn-sm">
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </a>
+            </td>        
+        </tr>
+    </table>
+</div>
+
+<div style="display: inline-block; margin-left: 20px;">
+    <table>
+        <tr>
+            <td width="150"><h2>CONSULTAR</h2></td>      
+            <td>
+                <a href="{% url 'buscar_verdura' %}" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+            </td>        
+        </tr>
+    </table>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Producto</th>
+            <th>Precio Unitario</th>
+            <th>Stock</th>
+            <th>Editar</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in verdura_list %}
+        <tr>
+            <td>{{ producto.nombre }}</td>
+            <td>$ {{ producto.precio }}</td>
+            <td>{{ producto.unidad }} KILOS</td>
+            <td>
+                <a href="{% url 'verduras_update' producto.id %}"class="btn btn-primary" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                    <i class="fa fa-edit fa-sm" title="Editar Registro"></i>
+                </a>
+                <a href="{% url 'verduras_delete' producto.id %}" class="btn btn-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+                    <i class="fa fa-trash fa-sm" title="Eliminar Registro"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock Contenido %}
+
+{% block Copyright %}
+<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+    <!-- Contenido del footer de la página -->
+</div>
+{% endblock Copyright %}

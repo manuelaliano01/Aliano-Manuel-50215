@@ -1,0 +1,22 @@
+{% extends "aplicacion/index.html" %}
+
+
+{% block Titulo %}
+<h1 class="mb-5">Buscar producto</h1>
+{% endblock Titulo %}
+
+
+{% block Contenido %}
+
+<form action="{% url 'encontrar_almacen' %}" method="get">
+    {% csrf_token %}
+    <p>Ingrese el producto a buscar: <input type="text" name="buscar" id="buscar" required=True></p>
+    <input type="submit" value="BUSCAR">
+</form>
+
+{% endblock Contenido %}
+
+{% block Copyright %}
+<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+</div>
+{% endblock Copyright %}

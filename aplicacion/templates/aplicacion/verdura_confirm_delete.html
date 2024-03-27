@@ -1,0 +1,20 @@
+{% extends 'aplicacion/index.html' %} 
+{% load static %} 
+{% block titulo %}VERDURAS{% endblock titulo %} 
+
+{% block Contenido %}
+    
+    <form action="" method="POST">
+        {% csrf_token %}   
+        <div class="text-center">     
+            <h3>¿Eliminar el siguiente producto? <p style="color:red">{{ object }}</p> </h3>
+        </div>
+        <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block" value="Confirmar">
+        </div>
+    </form>
+{% endblock Contenido %}
+
+{% block Copyright %}
+
+{% endblock Copyright %}

@@ -1,0 +1,21 @@
+{% extends 'aplicacion/index.html' %}
+
+{% block Titulo %}
+<h1 class="display-4 fw-bolder">INGRESAR</h1>
+<p class="lead fw-normal text-white-50 mb-0">Ingrese su nombre de usuario y contraseña</p>
+</header>
+{% endblock Titulo %}
+
+
+{% block Contenido %}
+    
+<form action="" method="post">
+    {% csrf_token %}
+   
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
+
+{% endblock Contenido %}
